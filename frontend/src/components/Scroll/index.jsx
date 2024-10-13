@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import content from "@/data/scroll.tsx";
-import { StickyScroll } from "../ui/sticky-scroll-reveal";
+import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 
 export default function index() {
   return (

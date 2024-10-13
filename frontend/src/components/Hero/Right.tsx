@@ -1,8 +1,7 @@
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { useRef } from "react";
 import { Mesh, TextureLoader } from "three";
-import { OrbitControls } from "@react-three/drei";
-import { div } from "framer-motion/client";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 
 const Cube = () => {
   const cubeRef = useRef<Mesh>(null!);
@@ -12,15 +11,17 @@ const Cube = () => {
 
   useFrame(() => {
     if (cubeRef.current) {
-      cubeRef.current.rotation.x += 0.01;
-      cubeRef.current.rotation.y += 0.001;
+      // cubeRef.current.rotation.x += 0.001;
+      // cubeRef.current.rotation.z += 0.001;
+      cubeRef.current.rotation.y += 0.01;
       // console.log("postion", cubeRef.current.position);
     }
   });
 
   return (
     <mesh ref={cubeRef}>
-      <boxGeometry args={[3, 3, 3]} />
+      <torusGeometry args={[2, 0.8, 16, 100]} />{" "}
+      {/* radius, tube, radialSegments, tubularSegments */}
       <meshMatcapMaterial matcap={matcapTexture} />
     </mesh>
   );
@@ -29,8 +30,10 @@ const Cube = () => {
 const RotatingCube = () => {
   return (
     <div className="ml-[18vw] mt-[10vh]">
-      <Canvas style={{ width: "400px", height: "400px" }}>
+      <Canvas style={{ width: "450px", height: "450px" }}>
         {/* Camera controls */}
+        <PerspectiveCamera makeDefault position={[0, 0, 4.5]} fov={75} />
+
         <OrbitControls enableZoom={false} />
 
         {/* Render the cube inside the Canvas */}

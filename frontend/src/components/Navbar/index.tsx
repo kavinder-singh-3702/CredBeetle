@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Dialog,
   DialogPanel,
@@ -20,6 +20,8 @@ import {
   FingerPrintIcon,
   SquaresPlusIcon,
   XMarkIcon,
+  MoonIcon,
+  SunIcon,
 } from "@heroicons/react/24/outline";
 import {
   ChevronDownIcon,
@@ -67,6 +69,16 @@ const callsToAction = [
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Sync the dark mode state with the HTML `dark` class
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
 
   return (
     <header className="bg-gray-950">
@@ -86,7 +98,19 @@ export default function Example() {
             />
           </a>
         </div>
-        <div className="flex lg:hidden bg-red-400">
+        <div className="flex items-center gap-x-4 lg:hidden">
+          {/* Dark Mode Toggle Button */}
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="p-2.5 text-white rounded-md hover:bg-gray-700 focus:outline-none"
+          >
+            {darkMode ? (
+              <SunIcon className="h-6 w-6" aria-hidden="true" />
+            ) : (
+              <MoonIcon className="h-6 w-6" aria-hidden="true" />
+            )}
+          </button>
+          {/* Mobile Menu Button */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
@@ -106,10 +130,7 @@ export default function Example() {
               />
             </PopoverButton>
 
-            <PopoverPanel
-              transition
-              className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-white/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
-            >
+            <PopoverPanel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-white/5">
               <div className="p-4">
                 {products.map((item) => (
                   <div
@@ -163,12 +184,24 @@ export default function Example() {
             Company
           </a>
         </PopoverGroup>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden lg:flex lg:flex-1 lg:items-center lg:gap-x-4 lg:justify-end">
+          {/* Dark Mode Toggle Button */}
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="p-2.5 text-white rounded-md hover:bg-gray-700 focus:outline-none"
+          >
+            {darkMode ? (
+              <SunIcon className="h-6 w-6" aria-hidden="true" />
+            ) : (
+              <MoonIcon className="h-6 w-6" aria-hidden="true" />
+            )}
+          </button>
           <a href="#" className="text-sm font-semibold leading-6 text-white">
             Log in <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </nav>
+      {/* Mobile Menu Dialog */}
       <Dialog
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}

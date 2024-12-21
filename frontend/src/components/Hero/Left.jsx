@@ -5,7 +5,7 @@ import { SparklesCore } from "../ui/Sparkles.tsx";
 export default function Left() {
   return (
     <div className="h-[90vh] z-0 w-[45vw] bg-black flex flex-col items-center justify-center overflow-hidden rounded-md lg:ml-10">
-      <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-0">
+      <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center  text-white relative z-0">
         CredBeetle
       </h1>
       <div className="w-[40rem] h-40 relative">

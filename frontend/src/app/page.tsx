@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <section className="bg-black min-h-screen">
       <Hero />
-      <AboutUs />
+      <AbowutUs />
       <Scroll />
       <Statistics />
       <Sponsors />

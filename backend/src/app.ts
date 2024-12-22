@@ -4,7 +4,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const connectDB = require("./config/db");
 
-// const CustomerRoutes = require("./routes/auth.routes");
+const AuthRoutes = require("./routes/auth.routes");
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -17,7 +17,7 @@ app.use(express.json());
 // MongoDB Connection
 connectDB();
 
-// app.use("/api/v1/customer", CustomerRoutes);
+app.use("/api/v1/auth", AuthRoutes);
 
 // Start Server
 app.listen(port, () => {

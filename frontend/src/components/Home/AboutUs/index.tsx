@@ -3,9 +3,9 @@ import React from "react";
 
 export default function page() {
   return (
-    <div className="text-white h-screen items-center bg-black text-lg mx-auto p-4 flex flex-col gap-10">
+    <div className="text-white h-screen items-center bg-black text-lg mx-auto p-4 flex flex-col gap-10 ">
       <h1 className="text-7xl font-black mb-10 text-center">About Us</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-20  mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-20   ">
         <div className="flex flex-col items-center text-center">
           <Image
             src="/shieldd.svg"

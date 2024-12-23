@@ -29,7 +29,7 @@ const Cube = () => {
 
 const RotatingCube = () => {
   return (
-    <div className="ml-[18vw] mt-[10vh]">
+    <div className="ml-[10vw] mt-[10vh]">
       <Canvas style={{ width: "450px", height: "450px" }}>
         {/* Camera controls */}
         <PerspectiveCamera makeDefault position={[0, 0, 4.5]} fov={75} />

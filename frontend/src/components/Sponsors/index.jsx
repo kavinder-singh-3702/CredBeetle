@@ -15,13 +15,14 @@ const Sponsors = () => {
   return (
     <div className="w-screen h-screen flex items-center justify-center">
       <div className="flex flex-col items-center justify-center w-full">
-        <div className="text-5xl font-bold text-center mb-4 text-gray-600">
-          Partners and references
-        </div>
-        <div className="text-xl font-bold mb-10  text-white">
+        {/* Title Section */}
+        <h1 className="text-6xl font-extrabold text-center mb-6 text-cyan-400 shadow-lg shadow-cyan-500/50">
+          Partners and References
+        </h1>
+        <p className="text-xl font-medium text-center max-w-4xl mb-10 text-gray-300">
           We work with a network of brands dedicated to providing value to
-          customers while supporting local economies and sustainable practices.{" "}
-        </div>
+          customers while supporting local economies and sustainable practices.
+        </p>
 
         <div className="flex overflow-hidden w-[1200px] mask-image">
           <div className="flex animate-scrollX">

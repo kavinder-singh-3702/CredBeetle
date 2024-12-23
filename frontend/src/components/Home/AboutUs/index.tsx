@@ -15,25 +15,38 @@ export default function page() {
             className="h-20 w-20 mb-6 bg-white rounded-full"
           />
           <p className="leading-relaxed font-bold max-w-xs text-justify">
-            At Credbeetle, we're all about working coupons—no expired codes, no
-            fake deals, and absolutely no "Oops, this doesn't apply here"
-            nonsense. Everything you see here is 100% legit because we're the
-            watchdogs of savings who double-check, triple-check, and even
-            quadruple-check every deal before it gets to you.
+            At Credbeetle, we`&apos;`re all about working coupons—no expired
+            codes, no fake deals, and absolutely no `&quot;`Oops, this
+            doesn`&apos;`t apply here`&quot;` nonsense. Everything you see here
+            is 100% legit because we`&apos;`re the watchdogs of savings who
+            double-check, triple-check, and even quadruple-check every deal
+            before it gets to you.
           </p>
         </div>
         <div className="flex flex-col items-center text-center">
-          <img src="/hand.svg" className="h-20 w-20 mb-6 bg-white" />
+          <Image
+            width={264}
+            height={264}
+            alt="logo"
+            src="/hand.svg"
+            className="h-20 w-20 mb-6 bg-white"
+          />
           <p className="leading-relaxed font-bold max-w-xs text-justify">
-            Didn't know you could save on that fancy coffee machine, your
-            streaming bill, or even your pet's spa day? Now you do, thanks to
-            us! We're treasure hunters for deals, turning your savings into pure
-            fun. No wasted time, no useless codes—just straight-up legit coupons
-            that work every time.
+            Didn`&apos;`t know you could save on that fancy coffee machine, your
+            streaming bill, or even your pet`&apos;`s spa day? Now you do,
+            thanks to us! We`&apos;`re treasure hunters for deals, turning your
+            savings into pure fun. No wasted time, no useless codes—just
+            straight-up legit coupons that work every time.
           </p>
         </div>
         <div className="flex flex-col items-center text-center">
-          <img src="/dollar.svg" className="h-20 w-20 mb-6 bg-white" />
+          <Image
+            src="/dollar.svg"
+            width={264}
+            height={264}
+            alt="logo"
+            className="h-20 w-20 mb-6 bg-white"
+          />
           <p className="leading-relaxed font-bold max-w-xs text-justify">
             Think of us as your coupon sidekicks, saving the world one valid
             deal at a time because, hey, your savings deserve to work as hard as

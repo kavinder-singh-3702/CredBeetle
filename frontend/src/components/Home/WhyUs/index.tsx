@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const index = () => {
@@ -5,11 +6,14 @@ const index = () => {
     <div className="text-white h-full p-4 mb-40  ">
       <h1 className="text-7xl font-black mb-20 text-center">Why Choose Us?</h1>
       <h1 className="text-4xl font-black mb-12 text-center">
-        We're the Coupon Crusaders You Deserve!
+        We`&apos;`re the Coupon Crusaders You Deserve!
       </h1>
       <div className="grid grid-cols-3 grid-rows-2 gap-20 px-40">
         <div className="flex flex-col items-center text-center shadow-lg rounded-lg bg-gray-900 p-6">
-          <img
+          <Image
+            alt=""
+            width={264}
+            height={264}
             src="/discount.png"
             className="h-20 w-20 mb-6 bg-white rounded-full"
           />
@@ -18,12 +22,15 @@ const index = () => {
           </h1>{" "}
           <p className="leading-relaxed font-bold  text-justify">
             No more chasing ghosts or expired deals. If we show it, it works. If
-            it doesn't, we'll eat an expired coupon ourselves okay, maybe not,
-            but you get the idea.
+            it doesn`&apos;`t, we`&apos;`ll eat an expired coupon ourselves
+            okay, maybe not, but you get the idea.
           </p>
         </div>
         <div className="flex flex-col items-center text-center shadow-lg rounded-lg bg-gray-900 p-6">
-          <img
+          <Image
+            alt=""
+            width={264}
+            height={264}
             src="/calendar.png"
             className="h-20 w-20 mb-6 bg-white rounded-full"
           />
@@ -39,7 +46,10 @@ const index = () => {
           </p>
         </div>
         <div className="flex flex-col items-center text-center shadow-lg rounded-lg bg-gray-900 p-6">
-          <img
+          <Image
+            alt=""
+            width={264}
+            height={264}
             src="/search.png"
             className="h-20 w-20 mb-6 bg-white rounded-full"
           />
@@ -48,12 +58,16 @@ const index = () => {
           </h1>
           <p className="leading-relaxed font-bold  text-justify">
             {" "}
-            We're like treasure hunters for discounts. You didn't even know you
-            could save on that, did you? Now you do. You're welcome!
+            We`&apos;`re like treasure hunters for discounts. You didn`&apos;`t
+            even know you could save on that, did you? Now you do. You`&apos;`re
+            welcome!
           </p>
         </div>
         <div className="flex flex-col items-center text-center shadow-lg rounded-lg bg-gray-900 p-6">
-          <img
+          <Image
+            alt=""
+            width={264}
+            height={264}
             src="/badge.png"
             className="h-20 w-20 mb-6 bg-white rounded-full"
           />
@@ -68,7 +82,10 @@ const index = () => {
           </p>
         </div>
         <div className="flex flex-col items-center text-center shadow-lg rounded-lg bg-gray-900 p-6">
-          <img
+          <Image
+            alt=""
+            width={264}
+            height={264}
             src="/piggy.png"
             className="h-20 w-20 mb-6 bg-white rounded-full"
           />

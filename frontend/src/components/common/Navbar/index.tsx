@@ -6,7 +6,6 @@ import {
   DialogPanel,
   Disclosure,
   DisclosureButton,
-  DisclosurePanel,
   Popover,
   PopoverButton,
   PopoverGroup,
@@ -23,49 +22,49 @@ import {
   MoonIcon,
   SunIcon,
 } from "@heroicons/react/24/outline";
-import {
-  ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-} from "@heroicons/react/20/solid";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-const products = [
+const coupons = [
   {
-    name: "Analytics",
-    description: "Get a better understanding of your traffic",
+    name: "Deal of the Day",
+    description: "Grab limited-time deals before they expire!",
     href: "#",
     icon: ChartPieIcon,
   },
   {
-    name: "Engagement",
-    description: "Speak directly to your customers",
+    name: "Free Coupons",
+    description: "Access free coupons for amazing savings on your purchases.",
     href: "#",
     icon: CursorArrowRaysIcon,
   },
   {
-    name: "Security",
-    description: "Your customers’ data will be safe and secure",
+    name: "Premium Coupons",
+    description: "Enjoy exclusive discounts with our premium coupons.",
     href: "#",
     icon: FingerPrintIcon,
   },
   {
-    name: "Integrations",
-    description: "Connect with third-party tools",
+    name: "Seasonal Offers",
+    description:
+      "Save big with special discounts available during seasonal sales.",
     href: "#",
     icon: SquaresPlusIcon,
   },
   {
-    name: "Automations",
-    description: "Build strategic funnels that will convert",
+    name: "Student Discounts",
+    description: "Unlock special savings tailored for students.",
     href: "#",
     icon: ArrowPathIcon,
   },
-];
-const callsToAction = [
-  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
+  {
+    name: "Women Discounts",
+    description: "Discover exclusive deals designed for women shoppers.",
+    href: "#",
+    icon: ArrowPathIcon,
+  },
 ];
 
 export default function Example() {
@@ -74,12 +73,14 @@ export default function Example() {
 
   // Sync the dark mode state with the HTML `dark` class
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    document.documentElement.classList.add("dark");
+    // if (darkMode) {
+    //   document.documentElement.classList.add("dark");
+    // } else {
+    //   document.documentElement.classList.remove("dark");
+    // }
   }, [darkMode]);
+  const pathname = usePathname();
 
   return (
     <header className="bg-gray-950">
@@ -122,23 +123,31 @@ export default function Example() {
           </button>
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
+          <Link
+            href="/"
+            className={`text-sm font-semibold leading-6 ${
+              pathname === "/" ? "text-cyan-400" : "text-white"
+            }`}
+          >
+            Home
+          </Link>
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white">
-              Product
+              Coupons
               <ChevronDownIcon
                 aria-hidden="true"
                 className="h-5 w-5 flex-none text-gray-400"
               />
             </PopoverButton>
 
-            <PopoverPanel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-white/5">
+            <PopoverPanel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-black shadow-lg ring-1 ring-black/5">
               <div className="p-4">
-                {products.map((item) => (
+                {coupons.map((item) => (
                   <div
                     key={item.name}
                     className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-700"
                   >
-                    <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                    <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-gray-700">
                       <item.icon
                         aria-hidden="true"
                         className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
@@ -157,32 +166,48 @@ export default function Example() {
                   </div>
                 ))}
               </div>
-              <div className="grid grid-cols-2 divide-x divide-white/5 bg-gray-50">
-                {callsToAction.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-white hover:bg-gray-100"
-                  >
-                    <item.icon
-                      aria-hidden="true"
-                      className="h-5 w-5 flex-none text-gray-400"
-                    />
-                    {item.name}
-                  </a>
-                ))}
-              </div>
             </PopoverPanel>
           </Popover>
 
-          <Link href="#" className="text-sm font-semibold leading-6 text-white">
-            Features
+          <Link
+            href="#"
+            className={`text-sm font-semibold leading-6 ${
+              pathname === "/compare" ? "text-cyan-400" : "text-white"
+            }`}
+          >
+            Compare
           </Link>
-          <Link href="#" className="text-sm font-semibold leading-6 text-white">
-            Marketplace
+          <Link
+            href="#"
+            className={`text-sm font-semibold leading-6 ${
+              pathname === "/about-us" ? "text-cyan-400" : "text-white"
+            }`}
+          >
+            About Us
           </Link>
-          <Link href="#" className="text-sm font-semibold leading-6 text-white">
-            Company
+          <Link
+            href="#"
+            className={`text-sm font-semibold leading-6 ${
+              pathname === "/All-Time" ? "text-cyan-400" : "text-white"
+            }`}
+          >
+            All time
+          </Link>
+          <Link
+            href="#"
+            className={`text-sm font-semibold leading-6 ${
+              pathname === "/blogs" ? "text-cyan-400" : "text-white"
+            }`}
+          >
+            Blogs
+          </Link>
+          <Link
+            href="#"
+            className={`text-sm font-semibold leading-6 ${
+              pathname === "/support" ? "text-cyan-400" : "text-white"
+            }`}
+          >
+            Support/Help
           </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:items-center lg:gap-x-4 lg:justify-end">
@@ -199,9 +224,17 @@ export default function Example() {
           </button>
           <Link
             href="/login"
-            className="text-sm font-semibold leading-6 text-white"
+            className={`text-sm font-semibold leading-6 ${
+              pathname === "/login" ? "text-cyan-400" : "text-white"
+            }`}
           >
             Log in <span aria-hidden="true">&rarr;</span>
+          </Link>
+          <Link
+            href="/"
+            className="text-sm font-semibold leading-6 bg-cyan-400 text-white py-2 px-4 rounded-md shadow-lg hover:bg-cyan-500 hover:shadow-xl transition-all duration-300"
+          >
+            Shop
           </Link>
         </div>
       </nav>
@@ -214,7 +247,7 @@ export default function Example() {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
           <div className="flex items-center justify-between">
-            <Link href="#" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <Image
                 width="264"
@@ -238,42 +271,30 @@ export default function Example() {
               <div className="space-y-2 py-6">
                 <Disclosure as="div" className="-mx-3">
                   <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-white hover:bg-gray-700">
-                    Product
+                    Coupons
                     <ChevronDownIcon
                       aria-hidden="true"
                       className="h-5 w-5 flex-none group-data-[open]:rotate-180"
                     />
                   </DisclosureButton>
-                  <DisclosurePanel className="mt-2 space-y-2">
-                    {[...products, ...callsToAction].map((item) => (
-                      <DisclosureButton
-                        key={item.name}
-                        as="a"
-                        href={item.href}
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-700"
-                      >
-                        {item.name}
-                      </DisclosureButton>
-                    ))}
-                  </DisclosurePanel>
                 </Disclosure>
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-700"
                 >
-                  Features
+                  Compare
                 </a>
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-700"
                 >
-                  Marketplace
+                  About US
                 </a>
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-700"
                 >
-                  Company
+                  Best Sellers
                 </a>
               </div>
               <div className="py-6">

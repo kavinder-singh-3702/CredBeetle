@@ -13,7 +13,7 @@ const Sponsors = () => {
   ];
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center">
+    <div className="w-screen h-[80vh] flex items-center justify-center">
       <div className="flex flex-col items-center justify-center w-full">
         {/* Title Section */}
         <h1 className="text-6xl font-extrabold text-center mb-6 text-cyan-400 shadow-lg shadow-cyan-500/50">
@@ -29,14 +29,14 @@ const Sponsors = () => {
             {row1.map((el, index) => (
               <div
                 key={index}
-                className="grid place-items-center w-[clamp(10rem,1rem+40vmin,30rem)] p-[calc(clamp(10rem,1rem+30vmin,30rem)/10)]"
+                className="grid place-items-center w-[clamp(10rem,1rem+40vmin,30rem)] p-1"
               >
                 <Image
                   height={264}
                   width={264}
                   src={el}
                   alt=""
-                  className="object-contain w-full h-full rounded-md aspect-[16/9] p-[5px_20px] shadow-[0px_2px_8px_rgba(99,99,99,0.2)]"
+                  className="object-contain w-full h-full rounded-md aspect-[16/9]"
                 />
               </div>
             ))}
@@ -45,14 +45,14 @@ const Sponsors = () => {
             {row1.map((el, index) => (
               <div
                 key={index}
-                className="grid place-items-center w-[clamp(10rem,1rem+40vmin,30rem)] p-[calc(clamp(10rem,1rem+30vmin,30rem)/10)]"
+                className="grid place-items-center w-[clamp(10rem,1rem+40vmin,30rem)] p-1"
               >
                 <Image
                   height={264}
                   width={264}
                   src={el}
                   alt=""
-                  className="object-contain w-full h-full rounded-md aspect-[16/9] p-[5px_20px] shadow-[0px_2px_8px_rgba(99,99,99,0.2)]"
+                  className="object-contain w-full h-full rounded-md aspect-[16/9]"
                 />
               </div>
             ))}

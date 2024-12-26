@@ -89,12 +89,26 @@ export default function Page() {
                     className="font-light text-gray-500 dark:text-gray-300"
                   >
                     I accept the{" "}
-                    <a
+                    <Link
                       className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                      href="#"
+                      href="/terms"
                     >
                       Terms and Conditions
-                    </a>
+                    </Link>
+                  </label>
+                </div>
+                <div className="ml-3 text-sm">
+                  <label
+                    htmlFor="terms"
+                    className="font-light text-gray-500 dark:text-gray-300"
+                  >
+                    I accept the{" "}
+                    <Link
+                      className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                      href="/policy"
+                    >
+                      Privacy and Policy
+                    </Link>
                   </label>
                 </div>
               </div>

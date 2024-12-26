@@ -6,6 +6,7 @@ import AboutUs from "@/components/Home/AboutUs";
 import WhyUs from "@/components/Home/WhyUs";
 import WhyCredBeetle from "@/components/Home/WhyCredBeetle";
 import HappyTeam from "@/components/Home/HappyTeam";
+
 export default function Home() {
   return (
     <section className="bg-black min-h-screen">
@@ -13,8 +14,9 @@ export default function Home() {
       <AboutUs />
       <WhyUs />
       <WhyCredBeetle />
-      <HappyTeam />
       <Statistics />
+      <HappyTeam />
+
       <Sponsors />
       <Footer />
     </section>

@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
 import Statistics from "@/components/Statistics";
-import Footer from "@/components/Footer";
+import Footer from "@/components/common/Footer";
 import Sponsors from "@/components/Sponsors";
 import AboutUs from "@/components/Home/AboutUs";
 import WhyUs from "@/components/Home/WhyUs";

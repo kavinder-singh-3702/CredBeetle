@@ -85,31 +85,6 @@ const Index = () => {
             <li>Confidence that you&apos;ll keep coming back for more.</li>
           </ul>
         </section>
-
-        <section className="mt-16">
-          <h2 className="text-3xl font-bold text-cyan-400 mb-6">
-            About Credbeetle
-          </h2>
-          <p className="text-lg leading-8 text-gray-300 mb-4">
-            Born from the frustration of expired and useless coupons, Credbeetle
-            is here to rewrite the rules of savings.
-          </p>
-          <ul className="list-disc list-inside text-lg leading-8 text-gray-300">
-            <li className="mb-2">
-              <strong className="text-cyan-400">Our Mission:</strong> To ensure
-              every deal you find is real, reliable, and ready to use.
-            </li>
-            <li className="mb-2">
-              <strong className="text-cyan-400">Our Vision:</strong> A world
-              where no coupon gets wasted, no savings are missed, and every
-              customer leaves with a smile.
-            </li>
-            <li>
-              <strong className="text-cyan-400">Our Motto:</strong> If it&apos;s
-              displayed, it&apos;s legit.
-            </li>
-          </ul>
-        </section>
       </div>
     </div>
   );

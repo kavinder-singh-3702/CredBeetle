@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "@/components/Cards/chooseUsCard";
+import Card from "@/components/Cards/ChooseUsCard";
 
 const Index = () => {
   const cards = [

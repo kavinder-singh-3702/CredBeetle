@@ -1,33 +1,86 @@
 "use client";
+
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const index = () => {
+const testimonials = [
+  {
+    name: "Benjamin Scott",
+    role: "CEO & Founder",
+    image: "/girl.png",
+    testimonial:
+      "This Marketing Agency is our solid partner since the day we launched our app. It's hard to describe the huge support and commitment they’ve put into our growth. This professional team helps us save money and time. Forever grateful, forever your clients. Thanks!",
+  },
+  {
+    name: "Sophia Green",
+    role: "Product Manager",
+    image: "/girl.png",
+    testimonial:
+      "Working with this team has been a seamless experience. They understand our needs and execute strategies flawlessly. Their support has been vital to our success!",
+  },
+  {
+    name: "Michael Brown",
+    role: "CTO",
+    image: "/girl.png",
+    testimonial:
+      "They've revolutionized the way we approach marketing. Their expertise is unmatched, and we're thrilled with the results they've delivered.",
+  },
+];
+
+const sliderSettings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  arrows: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
+
+const TestimonialSlider = () => {
   return (
-    <div className="flex">
-      <Slider>
-        {profile.map((d, index) => (
-          <div
-            key={index}
-            className="bg-gray-800 text-white rounded-lg p-6 max-w-sm shadow-lg ml-10"
-          >
-            {/* Profile Picture */}
-            <div className="flex items-center mb-4">
-              <img
-                src={d.image}
-                alt="Benjamin Scott"
-                className="h-12 w-12 rounded-lg object-cover"
-              />
-              <div className="ml-4">
-                {/* Name and Role */}
-                <h3 className="text-lg font-semibold">{d.name}</h3>
-                <p className="text-sm text-gray-400">{d.role}</p>
+    <div className="w-full max-w-screen-xl mx-auto px-4 py-8">
+      <h2 className="text-center text-2xl font-bold text-white mb-6">
+        What Our Clients Say
+      </h2>
+      <Slider {...sliderSettings}>
+        {testimonials.map((testimonial, index) => (
+          <div key={index} className="p-4">
+            <div className="bg-gray-800 text-white rounded-lg p-6 shadow-lg">
+              {/* Profile Picture and Details */}
+              <div className="flex items-center mb-4">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="h-12 w-12 rounded-full object-cover"
+                />
+                <div className="ml-4">
+                  <h3 className="text-lg font-semibold">{testimonial.name}</h3>
+                  <p className="text-sm text-gray-400">{testimonial.role}</p>
+                </div>
               </div>
+              {/* Testimonial Text */}
+              <p className="text-gray-300">{testimonial.testimonial}</p>
             </div>
-            {/* Testimonial Content */}
-            <p className="text-gray-300">{d.testimonial}</p>
           </div>
         ))}
       </Slider>
@@ -35,48 +88,4 @@ const index = () => {
   );
 };
 
-const profile = [
-  {
-    name: "Benjamin Scott",
-    role: "CEO & Founder",
-    image: "/girl.png",
-    testimonial: `This Marketing Agency is our solid partner since the day we launched our
-    app. It's hard to describe the huge support and commitment they’ve put
-    into our growth. This professional team helps us save money and time.
-    Forever grateful, forever your clients. Thanks!`,
-  },
-  {
-    name: "Samantha Carter",
-    role: "Lead Project Manager",
-    image: "/9.png",
-    testimonial: `Never been so delighted with marketing services before. They took the time to carefully research and figure out what our startup needed to get to the next level. Today we are one of the leaders of the market and keep growing thanks to your strategies.`,
-  },
-  {
-    name: "Shashi Kumar Gupta",
-    role: "Philosopher",
-    image: "/download.jpg",
-    testimonial: `This Marketing Agency is our solid partner since the day we launched our
-    app. It's hard to describe the huge support and commitment they’ve put
-    into our growth. This professional team helps us save money and time.
-    Forever grateful, forever your clients. Thanks!`,
-  },
-  {
-    name: "Stephen Hawkins",
-    role: "Producer",
-    image: "/four.png",
-    testimonial: `This Marketing Agency has gone beyond our expectations ever since we use their services. We are so excited about the social media growth we experienced and will continue collaborating with this awesome team. Our company extremely recommends!`,
-  },
-  {
-    name: "Christopher Nolan",
-    role: "Producer",
-    image: "/6.png",
-    testimonial: `Never been so delighted with marketing services before. They took the time to carefully research and figure out what our startup needed to get to the next level. Today we are one of the leaders of the market and keep growing thanks to your strategies.`,
-  },
-  {
-    name: "Lilie Lewis",
-    role: "SEO Specialist",
-    image: "/boy.png",
-    testimonial: `This Marketing Agency has gone beyond our expectations ever since we use their services. We are so excited about the social media growth we experienced and will continue collaborating with this awesome team. Our company extremely recommends!`,
-  },
-];
-export default index;
+export default TestimonialSlider;

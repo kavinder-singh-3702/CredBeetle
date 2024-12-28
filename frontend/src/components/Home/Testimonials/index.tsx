@@ -58,33 +58,51 @@ const sliderSettings = {
 
 const TestimonialSlider = () => {
   return (
-    <div className="w-full max-w-screen-xl mx-auto px-4 py-8">
-      <h2 className="text-center text-2xl font-bold text-white mb-6">
+    <>
+      <h2 className="text-4xl font-extrabold text-center text-cyan-400 shadow-lg shadow-cyan-500/50 mb-20">
         What Our Clients Say
       </h2>
-      <Slider {...sliderSettings}>
-        {testimonials.map((testimonial, index) => (
-          <div key={index} className="p-4">
-            <div className="bg-gray-800 text-white rounded-lg p-6 shadow-lg">
-              {/* Profile Picture and Details */}
-              <div className="flex items-center mb-4">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="h-12 w-12 rounded-full object-cover"
-                />
-                <div className="ml-4">
-                  <h3 className="text-lg font-semibold">{testimonial.name}</h3>
-                  <p className="text-sm text-gray-400">{testimonial.role}</p>
+
+      <div className="w-full  max-w-screen-xl mx-auto flex ">
+        <div className="text-white mr-20">
+          <h1 className="text-4xl mb-8 mt-20  ">
+            See what our customers are saying about us
+          </h1>
+          <p>
+            We put our customers’ opinions first and do our best for their
+            satisfaction. Go ahead to check some of them!
+          </p>
+        </div>
+        <div className="overflow-hidden">
+          <Slider {...sliderSettings} className="max-w-full">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="p-4  ">
+                <div className="bg-gray-800 text-white rounded-lg p-6 shadow-lg ">
+                  {/* Profile Picture and Details */}
+                  <div className="flex items-center mb-4">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="h-12 w-12 rounded-lg object-cover"
+                    />
+                    <div className="ml-4">
+                      <h3 className="text-lg font-semibold">
+                        {testimonial.name}
+                      </h3>
+                      <p className="text-sm text-gray-400">
+                        {testimonial.role}
+                      </p>
+                    </div>
+                  </div>
+                  {/* Testimonial Text */}
+                  <p className="text-gray-300">{testimonial.testimonial}</p>
                 </div>
               </div>
-              {/* Testimonial Text */}
-              <p className="text-gray-300">{testimonial.testimonial}</p>
-            </div>
-          </div>
-        ))}
-      </Slider>
-    </div>
+            ))}
+          </Slider>
+        </div>
+      </div>
+    </>
   );
 };
 

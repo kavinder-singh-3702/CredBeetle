@@ -6,6 +6,7 @@ import AboutUs from "@/components/Home/AboutUs";
 import WhyUs from "@/components/Home/WhyUs";
 import WhyCredBeetle from "@/components/Home/WhyCredBeetle";
 import HappyTeam from "@/components/Home/HappyTeam";
+import Testimonials from "@/components/Home/Testimonials";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
       <WhyCredBeetle />
       <Statistics />
       <HappyTeam />
-
+      <Testimonials />
       <Sponsors />
       <Footer />
     </section>

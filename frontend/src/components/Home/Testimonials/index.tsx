@@ -68,7 +68,7 @@ const TestimonialSlider = () => {
           <h1 className="text-4xl mb-8 mt-20  ">
             See what our customers are saying about us
           </h1>
-          <p>
+          <p className="font-bold">
             We put our customers’ opinions first and do our best for their
             satisfaction. Go ahead to check some of them!
           </p>

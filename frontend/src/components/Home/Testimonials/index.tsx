@@ -11,7 +11,7 @@ const testimonials = [
     role: "CEO & Founder",
     image: "/girl.png",
     testimonial:
-      "This Marketing Agency is our solid partner since the day we launched our app. It's hard to describe the huge support and commitment they’ve put into our growth. This professional team helps us save money and time. Forever grateful, forever your clients. Thanks!",
+      "This Marketing Agency is our solid partner since the day we launched our app. It's hard to describe the huge support and commitment they’ve put into our growth.",
   },
   {
     name: "Sophia Green",
@@ -59,11 +59,11 @@ const sliderSettings = {
 const TestimonialSlider = () => {
   return (
     <>
-      <h2 className="text-4xl font-extrabold text-center text-cyan-400 shadow-lg shadow-cyan-500/50 h-full mb-20">
+      <h2 className="text-5xl font-extrabold text-center text-white shadow-lg shadow-cyan-500/50 h-full mb-20">
         What Our Clients Say
       </h2>
 
-      <div className=" mx-auto w-full bg-customBlue ml-5 pl-5 rounded-lg h-[50%]   flex ">
+      <div className=" mx-auto max-w-screen-xl w-full bg-customBlue  pl-5 rounded-lg h-[50%]   flex ">
         <div className="text-white w-[40%] mr-20 mb-10">
           <h1 className="text-4xl mb-8 mt-20  font-bold  ">
             See what our customers are saying about us

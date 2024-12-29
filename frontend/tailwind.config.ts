@@ -50,6 +50,7 @@ const config: Config = {
     },
     extend: {
       colors: {
+        customBlue: "#094864",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

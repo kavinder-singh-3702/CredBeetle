@@ -16,14 +16,14 @@ const testimonials = [
   {
     name: "Sophia Green",
     role: "Product Manager",
-    image: "/girl.png",
+    image: "/girl2.png",
     testimonial:
       "Working with this team has been a seamless experience. They understand our needs and execute strategies flawlessly. Their support has been vital to our success!",
   },
   {
     name: "Michael Brown",
     role: "CTO",
-    image: "/girl.png",
+    image: "/girl3.png",
     testimonial:
       "They've revolutionized the way we approach marketing. Their expertise is unmatched, and we're thrilled with the results they've delivered.",
   },
@@ -59,25 +59,25 @@ const sliderSettings = {
 const TestimonialSlider = () => {
   return (
     <>
-      <h2 className="text-4xl font-extrabold text-center text-cyan-400 shadow-lg shadow-cyan-500/50 mb-20">
+      <h2 className="text-4xl font-extrabold text-center text-cyan-400 shadow-lg shadow-cyan-500/50 h-full mb-20">
         What Our Clients Say
       </h2>
 
-      <div className="w-full  max-w-screen-xl mx-auto flex ">
-        <div className="text-white mr-20">
-          <h1 className="text-4xl mb-8 mt-20  ">
+      <div className=" mx-auto w-full bg-customBlue ml-5 pl-5 rounded-lg h-[50%]   flex ">
+        <div className="text-white w-[40%] mr-20 mb-10">
+          <h1 className="text-4xl mb-8 mt-20  font-bold  ">
             See what our customers are saying about us
           </h1>
-          <p className="font-bold">
+          <p className="font-extrabold ">
             We put our customers’ opinions first and do our best for their
             satisfaction. Go ahead to check some of them!
           </p>
         </div>
-        <div className="overflow-hidden">
+        <div className=" w-[60%] ">
           <Slider {...sliderSettings} className="max-w-full">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="p-4  ">
-                <div className="bg-gray-800 text-white rounded-lg p-6 shadow-lg ">
+              <div key={index} className="p-4 h-full  ">
+                <div className="bg-gray-800 text-white rounded-lg p-6 shadow-lg flex flex-col justify-between min-h-[400px] h-full  ">
                   {/* Profile Picture and Details */}
                   <div className="flex items-center mb-4">
                     <img
@@ -95,7 +95,9 @@ const TestimonialSlider = () => {
                     </div>
                   </div>
                   {/* Testimonial Text */}
-                  <p className="text-gray-300">{testimonial.testimonial}</p>
+                  <p className="text-gray-300 flex-grow">
+                    {testimonial.testimonial}
+                  </p>
                 </div>
               </div>
             ))}

@@ -29,7 +29,7 @@ const Index = () => {
       altText: "Authentic Coupons",
       title: "100% Authentic. Zero Nonsense.",
       description:
-        "No fake codes, no “Try again later,” and definitely no “works only on the 29th of February” jokes. Our coupons are as real as your love for saving money.",
+        "No fake codes, no “Try again later,” and definitely no “works only on the 29th of February” jokes.",
     },
     {
       imgSrc: "/piggy.png",
@@ -49,8 +49,9 @@ const Index = () => {
         <h2 className="text-3xl font-bold mb-20 text-center text-white">
           We&apos;re the Coupon Crusaders You Deserve!
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 px-10">
-          {cards.map((card, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 px-10">
+          {/* First 3 cards */}
+          {cards.slice(0, 3).map((card, index) => (
             <Card
               key={index}
               imgSrc={card.imgSrc}
@@ -59,6 +60,19 @@ const Index = () => {
               description={card.description}
             />
           ))}
+          {/* Last 2 cards centered */}
+          <div className="col-span-3 flex justify-center gap-12">
+            {cards.slice(3, 5).map((card, index) => (
+              <div key={index} className="w-full md:w-1/2 lg:w-1/3">
+                <Card
+                  imgSrc={card.imgSrc}
+                  altText={card.altText}
+                  title={card.title}
+                  description={card.description}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

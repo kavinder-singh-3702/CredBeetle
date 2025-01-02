@@ -25,12 +25,31 @@ export default function Page() {
               Create an account
             </h1>
             <form className="space-y-4 md:space-y-6" action="#">
+              {/* Name Field */}
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
+
+              {/* Email Field */}
               <div>
                 <label
                   htmlFor="email"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Your email
+                  Your Email
                 </label>
                 <input
                   type="email"
@@ -41,6 +60,26 @@ export default function Page() {
                   required
                 />
               </div>
+
+              {/* Mobile Number Field */}
+              <div>
+                <label
+                  htmlFor="mobile"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Mobile Number
+                </label>
+                <input
+                  type="tel"
+                  name="mobile"
+                  id="mobile"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="1234567890"
+                  required
+                />
+              </div>
+
+              {/* Password Field */}
               <div>
                 <label
                   htmlFor="password"
@@ -57,22 +96,25 @@ export default function Page() {
                   required
                 />
               </div>
-              <div>
+                            {/* OTP Verification Code Field */}
+                            <div>
                 <label
-                  htmlFor="confirm-password"
+                  htmlFor="otp"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Confirm password
+                  OTP Verification Code
                 </label>
                 <input
-                  type="password"
-                  name="confirm-password"
-                  id="confirm-password"
-                  placeholder="••••••••"
+                  type="text"
+                  name="otp"
+                  id="otp"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Enter OTP"
                   required
                 />
               </div>
+
+              {/* Terms and Conditions Checkbox */}
               <div className="flex items-start">
                 <div className="flex items-center h-5">
                   <input
@@ -97,27 +139,17 @@ export default function Page() {
                     </Link>
                   </label>
                 </div>
-                <div className="ml-3 text-sm">
-                  <label
-                    htmlFor="terms"
-                    className="font-light text-gray-500 dark:text-gray-300"
-                  >
-                    I accept the{" "}
-                    <Link
-                      className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                      href="/policy"
-                    >
-                      Privacy and Policy
-                    </Link>
-                  </label>
-                </div>
               </div>
+
+              {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                className="w-full text-white bg-blue-400 hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 Create an account
               </button>
+
+              {/* Login Link */}
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                 Already have an account?{" "}
                 <Link

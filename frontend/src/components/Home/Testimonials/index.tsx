@@ -36,8 +36,9 @@ const sliderSettings = {
   slidesToShow: 3,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 3000,
+  autoplaySpeed: 2500,
   arrows: true,
+  fade: true,
   responsive: [
     {
       breakpoint: 1024,
@@ -59,25 +60,36 @@ const sliderSettings = {
 const TestimonialSlider = () => {
   return (
     <>
-      <h2 className="text-5xl font-extrabold text-center text-white shadow-lg shadow-cyan-500/50 h-full mb-20">
-        What Our Clients Say
-      </h2>
+      {/* Header Section */}
+      <div className="text-center mb-20">
+        <h2 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-500 animate-gradient">
+          What Our Clients Say
+        </h2>
+        <p className="mt-4 text-lg text-gray-400 font-medium">
+          Hear from the people who trust us to grow their business.
+        </p>
+      </div>
 
-      <div className=" mx-auto max-w-screen-xl w-full bg-customBlue  pl-5 rounded-lg h-[50%]   flex ">
-        <div className="text-white w-[40%] mr-20 mb-10">
-          <h1 className="text-4xl mb-8 mt-20  font-bold  ">
+      {/* Main Content Section */}
+      <div className="mx-auto max-w-screen-xl w-full bg-customBlue p-8 rounded-lg flex flex-col lg:flex-row gap-8">
+        {/* Left Section - Text Content */}
+        <div className="text-white lg:w-[40%]">
+          <h1 className="text-4xl mb-8 font-bold">
             See what our customers are saying about us
           </h1>
-          <p className="font-extrabold ">
+          <p className="font-extrabold">
             We put our customers’ opinions first and do our best for their
             satisfaction. Go ahead to check some of them!
           </p>
         </div>
-        <div className=" w-[60%] ">
+
+        {/* Right Section - Testimonial Slider */}
+        <div className="lg:w-[60%]">
           <Slider {...sliderSettings} className="max-w-full">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="p-4 h-full  ">
-                <div className="bg-gray-800 text-white rounded-lg p-6 shadow-lg flex flex-col justify-between min-h-[400px] h-full  ">
+              <div key={index} className="p-4">
+                {/* Testimonial Card */}
+                <div className="bg-gray-800 text-white rounded-lg p-6 shadow-lg flex flex-col justify-between min-h-[400px] hover:scale-105 transition-transform duration-300 hover:shadow-2xl hover:shadow-cyan-500/50">
                   {/* Profile Picture and Details */}
                   <div className="flex items-center mb-4">
                     <img
@@ -94,6 +106,7 @@ const TestimonialSlider = () => {
                       </p>
                     </div>
                   </div>
+
                   {/* Testimonial Text */}
                   <p className="text-gray-300 flex-grow">
                     {testimonial.testimonial}

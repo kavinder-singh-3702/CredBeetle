@@ -1,8 +1,5 @@
 "use client";
-import React, { useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React from "react";
 import Image from "next/image";
 
 const teamMembers = [
@@ -47,130 +44,50 @@ const teamMembers = [
 ];
 
 const Index = () => {
-  const middleIndex = Math.floor(teamMembers.length / 2 + 1); // Get the middle index
-  const [centerIndex, setCenterIndex] = useState(middleIndex);
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 800,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: "0px",
-    initialSlide: middleIndex, // Set initial slide to the middle one
-    beforeChange: (oldIndex: number, newIndex: number) => {
-      setCenterIndex(newIndex);
-    },
-
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          centerPadding: "0px",
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          centerPadding: "0px",
-        },
-      },
-    ],
-  };
-
   return (
     <div className="text-white bg-black py-20">
       <div className="mb-10">
-        <h1 className="text-5xl font-extrabold mb-10 text-center shadow-lg shadow-cyan-500/50">
+        <h1 className="text-5xl font-bold mb-6 text-center text-cyan-500">
           Our Happy Team
         </h1>
-        <p className="text-lg text-center text-gray-300 font-medium mb-16">
-          Meet our creative team, those who have passion to work and make our
-          clients more comfortable and happy.
+        <p className="text-lg text-center text-gray-300 font-light mb-16">
+          Meet our creative team, passionate about delivering exceptional
+          experiences and making our clients happy.
         </p>
       </div>
-      <div className="px-10 relative">
-        <Slider {...settings}>
-          {teamMembers.map((member, index) => (
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          {teamMembers.map((member) => (
             <div
               key={member.id}
-              className={`flex flex-col items-center text-center px-4 transition-all duration-700 ${
-                index === centerIndex ? "scale-110" : "scale-90"
-              }`}
-              style={{
-                transformOrigin: "center center",
-                transition: "all 0.8s ease-in-out",
-              }}
+              className="flex flex-col items-center text-center group transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/50"
             >
-              {/* Container for Image and Text */}
-              <div
-                className={`flex flex-col justify-center items-center ${
-                  index === centerIndex
-                    ? "h-[450px] w-[350px]"
-                    : "h-[400px] w-[300px]"
-                }`}
-              >
-                {/* Centered Image */}
-                <div
-                  className={`relative rounded-full overflow-hidden border-4 border-cyan-500 ${
-                    index === centerIndex
-                      ? "h-[250px] w-[250px]"
-                      : "h-[200px] w-[200px]"
-                  }`}
-                >
-                  <Image
-                    src={member.image}
-                    layout="fill"
-                    objectFit="cover"
-                    alt={member.name}
-                  />
-                </div>
+              {/* Image Container */}
+              <div className="relative rounded-full overflow-hidden border-4 border-cyan-500 h-[150px] w-[150px] group-hover:border-cyan-300 transition-all duration-300">
+                <Image
+                  src={member.image}
+                  layout="fill"
+                  objectFit="cover"
+                  alt={member.name}
+                  className="group-hover:scale-110 transition-all duration-300"
+                />
+              </div>
 
-                {/* Centered Text */}
-                <div className="mt-6">
-                  <h1
-                    className={`text-lg font-bold text-cyan-500 ${
-                      index === centerIndex ? "block" : "hidden"
-                    }`}
-                  >
-                    {member.name}
-                  </h1>
-                  <h3
-                    className={`text-md text-gray-400 mt-2 ${
-                      index === centerIndex ? "block" : "hidden"
-                    }`}
-                  >
-                    {member.role}
-                  </h3>
-                  <p
-                    className={`text-sm text-gray-300 px-8 mt-3 ${
-                      index === centerIndex ? "block" : "hidden"
-                    }`}
-                  >
-                    &quot;{member.quote}&quot;
-                  </p>
-                </div>
+              {/* Text Container */}
+              <div className="mt-6">
+                <h1 className="text-xl font-semibold text-cyan-500 group-hover:text-cyan-300 transition-all duration-300">
+                  {member.name}
+                </h1>
+                <h3 className="text-lg text-gray-400 mt-2 group-hover:text-gray-300 transition-all duration-300">
+                  {member.role}
+                </h3>
+                <p className="text-base text-gray-300 mt-3 group-hover:text-gray-200 transition-all duration-300">
+                  &quot;{member.quote}&quot;
+                </p>
               </div>
             </div>
           ))}
-        </Slider>
-        <style jsx global>{`
-          .slick-prev,
-          .slick-next {
-            z-index: 1;
-            width: 50px;
-            height: 50px;
-          }
-
-          .slick-prev:before,
-          .slick-next:before {
-            font-size: 30px;
-            color: cyan;
-          }
-        `}</style>
+        </div>
       </div>
     </div>
   );
